@@ -51,15 +51,16 @@
     </div>
 
     <div class="hero-right">
-      <div class="hero-card">
-        <p class="hero-card-eyebrow">Featured decision</p>
-        <h3>Breville Fresh &amp; Furious BBL620</h3>
-        <p class="hero-card-sub">Kitchen · Typical price: $160–$200</p>
-        <div class="hero-card-rule"></div>
-        <p class="hero-card-quote">“Reliable daily blending without the overbuilt complexity of premium machines — the defensible buy before Vitamix pricing starts to make sense.”</p>
-        <p class="hero-card-proof"><strong>Why it wins:</strong> fewer durability complaints than most mid-range blenders people cross-shop, with enough real-world power for frozen fruit, ice, and everyday use.</p>
-        <a class="hero-card-link" href="blender.html">See why this one wins <span>→</span></a>
-        <p class="hero-card-note">Want a different category? Start with the buttons on the left.</p>
+<div class="hero-card">
+  <p class="hero-card-eyebrow">Featured decision</p>
+  <h3 id="featured-title">Breville Fresh &amp; Furious BBL620</h3>
+  <p class="hero-card-sub" id="featured-sub">Kitchen · Typical price: $160–$200</p>
+  <div class="hero-card-rule"></div>
+  <p class="hero-card-quote" id="featured-quote">“Reliable daily blending without the overbuilt complexity of premium machines — the defensible buy before Vitamix pricing starts to make sense.”</p>
+  <p class="hero-card-proof" id="featured-proof"><strong>Why it wins:</strong> fewer durability complaints than most mid-range blenders people cross-shop, with enough real-world power for frozen fruit, ice, and everyday use.</p>
+  <a class="hero-card-link" id="featured-link" href="blender.html">See why this one wins <span>→</span></a>
+  <p class="hero-card-note">Want a different category? Start with the buttons on the left.</p>
+</div>
       </div>
     </div>
   </div>
@@ -278,5 +279,59 @@
   </div>
 </footer>
 </div>
+<script>
+  const featuredDecisions = [
+    {
+      title: "Breville Fresh & Furious BBL620",
+      sub: "Kitchen · Typical price: $160–$200",
+      quote: "“Reliable daily blending without the overbuilt complexity of premium machines — the defensible buy before Vitamix pricing starts to make sense.”",
+      proof: "<strong>Why it wins:</strong> fewer durability complaints than most mid-range blenders people cross-shop, with enough real-world power for frozen fruit, ice, and everyday use.",
+      link: "blender.html"
+    },
+    {
+      title: "Instant Vortex Plus 6-Quart",
+      sub: "Kitchen · Typical price: $100–$200",
+      quote: "“Enough capacity for real meals, strong everyday performance, and fewer tradeoffs than oversized or ultra-cheap options.”",
+      proof: "<strong>Why it wins:</strong> the 6-quart size hits the sweet spot for daily use without paying for features most households ignore.",
+      link: "air-fryer.html"
+    },
+    {
+      title: "Roborock Qrevo Curv",
+      sub: "Home Essentials · Typical price: $850–$1,200",
+      quote: "“High-end convenience that still feels rational: strong navigation, solid dock automation, and fewer painful compromises.”",
+      proof: "<strong>Why it wins:</strong> strong daily automation without stepping into the most failure-prone premium complexity.",
+      link: "robot-vacuum.html"
+    },
+    {
+      title: "Philips Sonicare 4100 Series",
+      sub: "Personal Care · Typical price: $50–$90",
+      quote: "“Gets the essentials right without the app extras, charger clutter, or premium price creep that rarely improves outcomes.”",
+      proof: "<strong>Why it wins:</strong> proven daily cleaning with pressure sensing and fewer gimmicks than pricier models.",
+      link: "electric-toothbrush.html"
+    }
+  ];
+
+  let featuredIndex = 0;
+
+  const featuredTitle = document.getElementById("featured-title");
+  const featuredSub = document.getElementById("featured-sub");
+  const featuredQuote = document.getElementById("featured-quote");
+  const featuredProof = document.getElementById("featured-proof");
+  const featuredLink = document.getElementById("featured-link");
+
+  function updateFeaturedDecision(index) {
+    const item = featuredDecisions[index];
+    featuredTitle.textContent = item.title;
+    featuredSub.textContent = item.sub;
+    featuredQuote.textContent = item.quote;
+    featuredProof.innerHTML = item.proof;
+    featuredLink.href = item.link;
+  }
+
+  setInterval(() => {
+    featuredIndex = (featuredIndex + 1) % featuredDecisions.length;
+    updateFeaturedDecision(featuredIndex);
+  }, 3500);
+</script>
 </body>
 </html>
