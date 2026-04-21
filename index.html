@@ -10,6 +10,62 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
 
 <link rel="stylesheet" href="styles.css">
+
+<style>
+  .hero-grid.hero-grid--focused {
+    align-items: start;
+  }
+
+  .hero-right {
+    align-self: start;
+  }
+
+  .hero-card {
+    box-sizing: border-box;
+  }
+
+  .featured-image-wrap {
+    height: 130px;
+    min-height: 130px;
+    max-height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0.9rem;
+    overflow: hidden;
+  }
+
+  #featured-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 110px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 767px) {
+    .hero-grid.hero-grid--focused {
+      align-items: start;
+    }
+
+    .hero-right {
+      align-self: start;
+    }
+
+    .featured-image-wrap {
+      height: 100px;
+      min-height: 100px;
+      max-height: 100px;
+      margin: 0 0 0.75rem;
+    }
+
+    #featured-image {
+      max-height: 84px;
+    }
+  }
+</style>
 </head>
 <body>
 <div class="cs-site">
@@ -54,12 +110,11 @@
       <div class="hero-card">
         <p class="hero-card-eyebrow">Featured decision</p>
 
-        <div style="margin: 0 0 1rem;">
+        <div class="featured-image-wrap">
           <img
             id="featured-image"
             src="Breville_Fresh_and_Furious_jpeg.png"
             alt="Breville Fresh &amp; Furious BBL620"
-            style="display:block; width:100%; max-width:220px; height:auto; margin:0 auto; object-fit:contain;"
           />
         </div>
 
